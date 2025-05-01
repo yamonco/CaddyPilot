@@ -1,0 +1,5 @@
+{% for service in services %}
+{{ service.domain }} {
+    reverse_proxy {{ service.container_name }}:{{ service.port }}
+}
+{% endfor %}
